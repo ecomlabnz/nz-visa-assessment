@@ -5,7 +5,7 @@ import GatewayTest from './components/assessment/GatewayTest';
 import EmailCapture from './components/results/EmailCapture';
 import DetailedAssessment from './components/assessment/DetailedAssessment';
 import { sendAssessmentEmail } from './lib/email';
-import type { GatewayResult, AssessmentAnswers, DetailedResult } from './types/assessment';
+import type { GatewayResult, DetailedResult } from './types/assessment';
 import './index.css';
 
 function App() {
