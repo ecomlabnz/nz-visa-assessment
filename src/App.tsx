@@ -12,14 +12,11 @@ function App() {
   // State management - tracks what the user sees
   const [stage, setStage] = useState<'gateway' | 'email-capture' | 'detailed'>('gateway');
   const [gatewayResult, setGatewayResult] = useState<GatewayResult | null>(null);
-  const [gatewayAnswers, setGatewayAnswers] = useState<AssessmentAnswers>({});
   const [userEmail, setUserEmail] = useState('');
-  const [detailedResult, setDetailedResult] = useState<DetailedResult | null>(null);
 
   // When user completes gateway test
-  const handleGatewayComplete = (result: GatewayResult, answers: AssessmentAnswers) => {
+  const handleGatewayComplete = (result: GatewayResult) => {
     setGatewayResult(result);
-    setGatewayAnswers(answers);
     
     if (result.eligible) {
       // Move to email capture (then detailed assessment)
@@ -35,9 +32,7 @@ function App() {
   };
 
   // When user completes detailed assessment
-  const handleDetailedComplete = async (result: DetailedResult, answers: AssessmentAnswers) => {
-    setDetailedResult(result);
-    
+  const handleDetailedComplete = async (result: DetailedResult) => {
     // Send email report
     try {
       await sendAssessmentEmail({

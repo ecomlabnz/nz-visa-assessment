@@ -37,7 +37,7 @@ export const APP_CONFIG = {
     provider: 'resend',
     fromEmail: 'onboarding@resend.dev', // Resend test email (change to your domain later)
     fromName: 'NZ Visa Assessment',
-    resendApiKey: 're_PFwsAu5b_8tUAUboX3f5iaA6GZUPHLGrv', // Your Resend API key
+    resendApiKey: '', // Your Resend API key
   },
   
   // Stripe Settings (when ready)
